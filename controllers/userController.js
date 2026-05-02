@@ -6,5 +6,16 @@ export const get=(req,res)=>{
     res.send(`The ID of the product is:${id}`)
 }
 export const create=(req,res)=>{
-    res.send()
+    const body = req.body;
+    res.json({
+        message: 'Body received',
+        body
+    });
+}
+export const remove=(req,res)=>{
+    const id = req.params.id;
+    res.json({
+        message: 'Product deleted',
+        id
+    });
 }
